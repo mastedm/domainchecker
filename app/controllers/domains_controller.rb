@@ -20,4 +20,10 @@ class DomainsController < ApplicationController
 		end
 
 	end
+
+	def destroy
+		domain = Domain.find(params[:id])
+		domain.destroy
+    redirect_to domains_path
+	end
 end
