@@ -28,4 +28,10 @@ class Domain < ActiveRecord::Base
 	rescue
 		Time.now + 1.day	
 	end
+
+	def self.ordered_list
+		with_exp_date = Domain.where.not(expiration_date: nil).order("expiration_date ASC")
+		without_exp_date = Domain.where(expiration_date: nil)
+		with_exp_date + without_exp_date
+	end
 end

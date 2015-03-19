@@ -20,9 +20,9 @@ h1 Domains
 						td
 							= d.name 
 						td 
-							= d.expiration_date.to_s
+							= date_format(d.expiration_date)
 						td
 							= d.comment 
 						td
-						 	= d.next_check_date.to_s					
+						 	= date_format(d.next_check_date)					
 

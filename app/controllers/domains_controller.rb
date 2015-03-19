@@ -1,6 +1,6 @@
 class DomainsController < ApplicationController
 	def index
-		@domains = Domain.all
+		@domains = Domain.ordered_list
 	end
 
 	def new 
