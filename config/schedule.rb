@@ -18,3 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+#set :environment, 'development'
+every 10.minutes do 
+  runner "WhoisManager.parse_expiration_dates"
+end

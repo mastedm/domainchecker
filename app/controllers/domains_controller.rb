@@ -14,11 +14,9 @@ class DomainsController < ApplicationController
 		Rails.logger.debug comment
 		
 		if Domain.create_bunch(list, comment)
-			redirect_to domains_path 	
-			
+			redirect_to domains_path
 		else 
 			render "new"
-			
 		end
 
 	end

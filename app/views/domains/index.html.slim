@@ -17,9 +17,9 @@ h1 Domains
 					tr
 					  td
 					  	= d.id
-						td
+						td class="#{highlight_css_class(d.expiration_date)}"
 							= d.name 
-						td 
+						td class="#{highlight_css_class(d.expiration_date)}"
 							= date_format(d.expiration_date)
 						td
 							= d.comment 
