@@ -1,0 +1,34 @@
+h1 Domains
+.row
+	.col-md-12
+		= link_to "New", new_domain_path, class: "btn btn-sm btn-success"
+.row
+	.col-md-12
+		table#domains_table.table.table-striped
+			thead
+				tr
+					th #id
+					th Name 
+					th Expiration Date
+					th Comment
+					th Next Checking Date
+					th
+			tbody
+				- @domains.each do |d|
+					tr
+					  td
+					  	= d.id
+						td class="#{highlight_css_class(d.expiration_date)}"
+							= d.name 
+						td class="#{highlight_css_class(d.expiration_date)}"
+							= date_format(d.expiration_date)
+						td
+							= d.comment 
+						td
+						 	= date_format(d.next_check_date)		
+						td
+							= button_to "Destroy", domain_path(d), :method => :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-danger"
+							
+.row
+	.col-md-12
+		= will_paginate @domains

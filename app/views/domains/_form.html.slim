@@ -1,0 +1,13 @@
+
+= form_tag create_bunch_domains_path, method: "post" do |f|
+	p
+		= label_tag :list
+		= text_area_tag  :list, nil, cols: 10, rows: 20, class: "form-control input-sm"
+	p
+	 	= label_tag  :comment
+	 	= text_field_tag :comment, nil, class: "form-control input-sm"	
+	p 
+	  = submit_tag "Создать", class: "btn btn-success btn-xs"	
+
+
+	
