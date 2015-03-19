@@ -24,5 +24,9 @@ h1 Domains
 						td
 							= d.comment 
 						td
-						 	= date_format(d.next_check_date)					
+						 	= date_format(d.next_check_date)				
 
+
+.row
+	.col-md-12
+		= will_paginate @domains

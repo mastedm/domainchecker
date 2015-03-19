@@ -1,6 +1,6 @@
 class DomainsController < ApplicationController
 	def index
-		@domains = Domain.ordered_list
+		@domains = Domain.ordered_list.paginate(:page => params[:page], :per_page => 30)
 	end
 
 	def new 
