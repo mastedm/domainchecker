@@ -1,0 +1,28 @@
+h1 Domains
+.row
+	.col-md-12
+		= link_to "New", new_domain_path, class: "btn btn-success"
+.row
+	.col-md-12
+		table.table.table-striped
+			thead
+				tr
+					th #id
+					th Name 
+					th Expiration Date
+					th Comment
+					th Next Checking Date
+			tbody
+				- @domains.each do |d|
+					tr
+					  td
+					  	= d.id
+						td
+							= d.name 
+						td 
+							= d.expiration_date.to_s
+						td
+							= d.comment 
+						td
+						 	= d.next_check_date.to_s					
+
