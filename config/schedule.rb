@@ -21,6 +21,8 @@
 
 #set :environment, 'development'
 
+env :PATH, ENV['PATH']
+
 job_type :runner, "cd :path && bundle exec rails runner -e :environment ':task' :output"
 
 every 10.minutes do 
