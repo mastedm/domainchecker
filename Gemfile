@@ -34,8 +34,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-gem 'pg'
 gem 'slim-rails'
 gem 'whois'
 gem 'whenever'
