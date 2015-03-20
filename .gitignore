@@ -20,6 +20,8 @@
 .ruby-gemset
 
 config/database.yml
+config/deploy/production.rb
 
 # Mac OS files
 .DS_Store
+

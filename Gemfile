@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.0'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
@@ -41,3 +40,12 @@ gem 'slim-rails'
 gem 'whois'
 gem 'whenever'
 gem 'will_paginate', '~> 3.0'
+
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+end
