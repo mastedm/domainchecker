@@ -20,6 +20,9 @@
 # Learn more: http://github.com/javan/whenever
 
 #set :environment, 'development'
+
+job_type :runner, "cd :path && bundle exec rails runner -e :environment ':task' :output"
+
 every 10.minutes do 
   runner "WhoisManager.parse_expiration_dates"
 end
