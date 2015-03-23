@@ -4,6 +4,8 @@ class Domain < ActiveRecord::Base
 		next_check_date = Time.now
 
 		list.each do |e|
+			e.downcase!
+			next if Domain.where(name: e).any?
 			Domain.create(name: e, comment: comment, next_check_date: next_check_date)
 		end
 	rescue 
