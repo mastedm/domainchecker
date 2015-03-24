@@ -35,6 +35,7 @@ class WhoisManager
 		if exp_date
 					domain.expiration_date = exp_date
 					domain.next_check_date = domain.generate_next_check_date
+					domain.status = "checked"
 					domain.save!
 		else
 			raise "expiration date is not exists"			
@@ -50,11 +51,15 @@ class WhoisManager
 			Domain.to_check_list.each do |e|
 				exp_date = WhoisManager.expiration_date(e.name)
 
+				if exp_date.nil?
+					e.to_unregistered
+				else
+					WhoisManager.update_exp_date(e, exp_date)
+				end
+
 				LOGGER.info "parse expiration date"
 				LOGGER.info "domain name: #{e.name}"
 				LOGGER.info "domain exp_date: #{e.expiration_date}"
-
-				WhoisManager.update_exp_date(e, exp_date)
 
 				sleep 10
 			end

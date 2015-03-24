@@ -16,12 +16,15 @@ h1 Domains
 			tbody
 				- @domains.each do |d|
 					tr
-					  td
-					  	= d.id
+						td
+							= d.id
 						td class="#{highlight_css_class(d.expiration_date)}"
 							= d.name 
 						td class="#{highlight_css_class(d.expiration_date)}"
-							= date_format(d.expiration_date)
+							- if d.status == "unregistered"
+								| unregistered
+							- else
+								= date_format(d.expiration_date)
 						td
 							= d.comment 
 						td

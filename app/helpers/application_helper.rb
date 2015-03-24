@@ -2,7 +2,7 @@ module ApplicationHelper
 	def date_format datetime
 		datetime.strftime("%F")
 	rescue
-		"-"	
+		"-"
 	end
 
 	def highlight_css_class expiration_date
@@ -10,6 +10,6 @@ module ApplicationHelper
 			"red_highlight"
 		end
 	rescue
-		""	
+		""
 	end
 end
